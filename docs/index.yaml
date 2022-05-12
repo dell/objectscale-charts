@@ -3,36 +3,36 @@ entries:
   atlas-operator:
   - apiVersion: v2
     appVersion: 0.15.0
-    created: "2022-05-12T14:43:35.342453251Z"
+    created: "2022-05-12T14:46:27.566012312Z"
     dependencies:
     - name: common-monitoring-lib
       repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
-      version: 3.7.0-1406.a091ec6d
+      version: 3.7.0-1407.d90de087
     - name: common-lib
       repository: file://../common-lib
-      version: 1.0.0
+      version: 1.0.1
     description: 'Atlas operator deploys a custom resource for an Atlas cluster and a pod to provision Atlas clusters. '
-    digest: fa42aba6188a6780cdab4288a5c41683b8140025fa4f2f92f9288bca73cafe35
+    digest: 5fdb97e2bd1a0e11c2d1562ba9098a573300a759a19eefd1696c49350e5c16c3
     maintainers:
     - name: Dell EMC
       url: https://dellemc.com
     name: atlas-operator
     urls:
-    - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/atlas-operator-0.33.0.tgz
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/atlas-operator-0.33.0.tgz
     version: 0.33.0
   bookkeeper-operator:
   - apiVersion: v2
     appVersion: 0.1.3
-    created: "2022-05-12T14:43:35.345207325Z"
+    created: "2022-05-12T14:46:27.568625575Z"
     dependencies:
     - name: common-monitoring-lib
       repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
-      version: 3.7.0-1406.a091ec6d
+      version: 3.7.0-1407.d90de087
     - name: common-lib
       repository: file://../common-lib
-      version: 1.0.0
+      version: 1.0.1
     description: Bookkeeper Operator Helm chart for Kubernetes
-    digest: 2e5b85d82e096924a55dc88f41c3cb973e4aa7e47114650e876e43d85d3eef3f
+    digest: 0b710f705d60af861ab7ffddd352c8d52967879c4b0ea565ff277e14b683d29a
     home: https://github.com/pravega/bookkeeper-operator
     icon: https://bookkeeper.apache.org/images/bookkeeper_logo_blk.png
     keywords:
@@ -40,9 +40,19 @@ entries:
     - stream storage
     name: bookkeeper-operator
     urls:
-    - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/bookkeeper-operator-0.1.3.tgz
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/bookkeeper-operator-0.1.3.tgz
     version: 0.1.3
   common-lib:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.569571452Z"
+    description: A Helm chart for Kubernetes
+    digest: 476a93c211358f1c4cffc73a7c46be2722dad4753352c41b2b572d43756800ee
+    name: common-lib
+    type: library
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/common-lib-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.345570225Z"
@@ -54,6 +64,18 @@ entries:
     - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/common-lib-1.0.0.tgz
     version: 1.0.0
   csi-baremetal-alerts:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.569811183Z"
+    description: 'Bare-metal CSI alerts configuration '
+    digest: 2667d95e90b9b964102a7fbc5c0610b5b28c45d087330fcd4b1ad9310c3ecb68
+    maintainers:
+    - name: Dell ECS CSI Baremetal
+      url: https://github.com/dell/csi-baremetal
+    name: csi-baremetal-alerts
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/csi-baremetal-alerts-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.346346875Z"
@@ -67,6 +89,27 @@ entries:
     - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/csi-baremetal-alerts-1.0.0.tgz
     version: 1.0.0
   decks:
+  - apiVersion: v2
+    appVersion: 2.0.1
+    created: "2022-05-12T14:46:27.571661292Z"
+    dependencies:
+    - condition: supportStore.enabled
+      name: decks-support-store
+      repository: file://../decks-support-store
+      version: 2.0.1
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Dell EMC Common Kubernetes Services
+    digest: aa3263a48d70c2c031f58963915d04ab209df46cfc3b67b1deac208a1e55e8f8
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: decks
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/decks-2.0.1.tgz
+    version: 2.0.1
   - apiVersion: v2
     appVersion: 2.0.0
     created: "2022-05-12T14:43:35.34809333Z"
@@ -90,6 +133,23 @@ entries:
     version: 2.0.0
   decks-support-store:
   - apiVersion: v2
+    appVersion: 2.0.1
+    created: "2022-05-12T14:46:27.572338618Z"
+    dependencies:
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Dell EMC Common Kubernetes Services Support Store
+    digest: ab2f040a80ce8311124f8a7caca97bffd8134376b556db1b1e910b4c2eb16c77
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: decks-support-store
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/decks-support-store-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
     appVersion: 2.0.0
     created: "2022-05-12T14:43:35.348757097Z"
     dependencies:
@@ -108,6 +168,15 @@ entries:
     version: 2.0.0
   dellemc-license:
   - apiVersion: v1
+    appVersion: 2.0.1
+    created: "2022-05-12T14:46:27.57279819Z"
+    description: A Helm chart for applying a Dell EMC License for a product in the k8s cluster
+    digest: dd0f9b8a9069b1292d4d627ee7303b52f87e565e7ea4163ed312fa04a9296455
+    name: dellemc-license
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/dellemc-license-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v1
     appVersion: 2.0.0
     created: "2022-05-12T14:43:35.349101415Z"
     description: A Helm chart for applying a Dell EMC License for a product in the k8s cluster
@@ -119,14 +188,38 @@ entries:
   dks-testapp:
   - apiVersion: v1
     appVersion: 1.2.0
-    created: "2022-05-12T14:43:35.349605453Z"
+    created: "2022-05-12T14:46:27.573299171Z"
     description: A Helm chart for DKS (DECKS, KAHM, and SRSGateway) test application
-    digest: fffcd28caeb4328d8f8c4e4b9af4531d0d82d191a213b552243a198119a9368f
+    digest: 05ab96f8e4b6d273b5ecd37dfcdf8e1735933406314a634efc393221ecb660e1
     name: dks-testapp
     urls:
-    - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/dks-testapp-1.2.0.tgz
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/dks-testapp-1.2.0.tgz
     version: 1.2.0
   ecs-cluster:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.603372773Z"
+    dependencies:
+    - condition: global.monitoring.enabled
+      name: ecs-monitoring
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: rsyslog-client
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: 'Dell EMC ObjectScale is highly scalable, and high performance S3 compatible object storage platform. '
+    digest: 7c81a5fce5a0d6ed940ed09382dc49a6cf7979a0a41c019bde21d5b9d437a568
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: ecs-cluster
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/ecs-cluster-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.374070127Z"
@@ -153,6 +246,27 @@ entries:
     version: 1.0.0
   helm-controller:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.60448865Z"
+    dependencies:
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    - import-values:
+      - default
+      name: common-monitoring-lib
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    description: 'helm-controller runs inside the cluster and acts as a helm broker to perform helm actions for packages, i.e install, update, delete '
+    digest: 4787cfdc60f20a19e6e4be1fb89261a405934520be8c60c826b9c929d392a1cb
+    maintainers:
+    - name: Dell EMC
+      url: https://dellemc.com
+    name: helm-controller
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/helm-controller-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.375078106Z"
     dependencies:
@@ -175,6 +289,25 @@ entries:
     version: 1.0.0
   influxdb-operator:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.608288898Z"
+    dependencies:
+    - name: common-monitoring-lib
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: 'InfluxDB Operator deploys operator pod which is responsible for managing Influxdb custom resources '
+    digest: 6810cb5a29ff6415a71ef04343d735fff52192a000f21f6d2b72eec1c175c2e5
+    maintainers:
+    - name: Dell EMC
+      url: https://dellemc.com
+    name: influxdb-operator
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/influxdb-operator-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.378494805Z"
     dependencies:
@@ -194,6 +327,27 @@ entries:
     - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/influxdb-operator-1.0.0.tgz
     version: 1.0.0
   kahm:
+  - apiVersion: v2
+    appVersion: 2.0.1
+    created: "2022-05-12T14:46:27.614329363Z"
+    dependencies:
+    - condition: db.postgres.enable
+      name: postgresql-ha
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.8.1
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Kubernetes Applications Health Management
+    digest: 1af5cc2d5ca7a855e61bba1a235408fe72587c77c4b75249993a0e1a2a9b5831
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: kahm
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/kahm-2.0.1.tgz
+    version: 2.0.1
   - apiVersion: v2
     appVersion: 2.0.0
     created: "2022-05-12T14:43:35.383218485Z"
@@ -217,6 +371,19 @@ entries:
     version: 2.0.0
   logging-injector:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.617387878Z"
+    dependencies:
+    - name: logging-injector
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    description: Rsyslog client sidecar injector
+    digest: 83d5174fbca2e6ed43bad5e85f70003d67ea491144f95901d88c91627c655c36
+    name: logging-injector
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/logging-injector-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.385648983Z"
     dependencies:
@@ -230,6 +397,26 @@ entries:
     - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/logging-injector-1.0.0.tgz
     version: 1.0.0
   objectscale-dcm:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.618609372Z"
+    dependencies:
+    - name: common-monitoring-lib
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Dell EMC DCM
+    digest: adafb30873fb397a5471a72f5990f5e0a27fc6398a61692ad2870705c96e8f50
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: objectscale-dcm
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/objectscale-dcm-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.386760861Z"
@@ -252,6 +439,26 @@ entries:
     version: 1.0.0
   objectscale-federation:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.619862198Z"
+    dependencies:
+    - name: common-monitoring-lib
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Dell EMC Federation Service
+    digest: a402b357a27bf64aabfc2f1f6ecd1ea256041481f279058501b18714194df805
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: objectscale-federation
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/objectscale-federation-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.387974881Z"
     dependencies:
@@ -273,6 +480,23 @@ entries:
     version: 1.0.0
   objectscale-gateway:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.620913967Z"
+    dependencies:
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Dell EMC Objectscale Gateway
+    digest: ca5fd22a988f89997024d82c042fbee5d602b5a1455231eda4da36a5ac7ad227
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: objectscale-gateway
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/objectscale-gateway-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.388863385Z"
     dependencies:
@@ -290,6 +514,29 @@ entries:
     - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/objectscale-gateway-1.0.0.tgz
     version: 1.0.0
   objectscale-graphql:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.624545397Z"
+    dependencies:
+    - condition: helmController.enabled
+      name: helm-controller
+      repository: file://../helm-controller
+      version: 1.0.1
+    - import-values:
+      - default
+      name: common-monitoring-lib
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Kubernetes
+    digest: d605ab9b1df04e7846b0792ed4edbadedb69222572ee40ab06bce100c292a037
+    name: objectscale-graphql
+    type: application
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/objectscale-graphql-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.391241705Z"
@@ -315,6 +562,26 @@ entries:
     version: 1.0.0
   objectscale-iam:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.626717692Z"
+    dependencies:
+    - name: common-monitoring-lib
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Dell EMC IAM
+    digest: b838556a37d360e0cc009e61d56dfbb41cbbc4a052187e92cf7a93a0945d0433
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: objectscale-iam
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/objectscale-iam-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.392931492Z"
     dependencies:
@@ -335,6 +602,63 @@ entries:
     - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/objectscale-iam-1.0.0.tgz
     version: 1.0.0
   objectscale-manager:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.685069652Z"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper-operator
+      repository: file://../zookeeper-operator
+      version: 0.2.10
+    - condition: atlas.enabled
+      name: atlas-operator
+      repository: file://../atlas-operator
+      version: 0.33.0
+    - condition: global.monitoring.enabled
+      name: objectscale-monitoring
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - condition: objectscale-gateway.enabled
+      name: objectscale-gateway
+      repository: file://../objectscale-gateway
+      version: 1.0.1
+    - condition: federation.enabled
+      name: objectscale-federation
+      repository: file://../objectscale-federation
+      version: 1.0.1
+    - condition: iam.enabled
+      name: objectscale-iam
+      repository: file://../objectscale-iam
+      version: 1.0.1
+    - condition: servicePod.enabled
+      name: service-pod
+      repository: file://../service-pod
+      version: 2.0.1
+    - condition: pravega.enabled
+      name: pravega-operator
+      repository: file://../pravega-operator
+      version: 0.5.2
+    - condition: bookkeeper.enabled
+      name: bookkeeper-operator
+      repository: file://../bookkeeper-operator
+      version: 0.1.3
+    - condition: dcm.enabled
+      name: objectscale-dcm
+      repository: file://../objectscale-dcm
+      version: 1.0.1
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: 'Dell EMC ObjectScale is highly scalable, and high performance S3 compatible object storage platform. '
+    digest: dd771b426eaa6d1fb9f72d2bb3e36039f4d4d994d688188ced3bea3ac2fc34da
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: objectscale-manager
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/objectscale-manager-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.453190774Z"
@@ -394,6 +718,34 @@ entries:
     version: 1.0.0
   objectscale-portal:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.689983087Z"
+    dependencies:
+    - condition: graphql.enabled
+      name: objectscale-graphql
+      repository: file://../objectscale-graphql
+      version: 1.0.1
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    - import-values:
+      - default
+      name: common-monitoring-lib
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: rsyslog-client
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    description: ObjectScale Portal
+    digest: 9ab14779153ab4e3b10f09693f0dc5a8d4bd5c970c2b9094fdd5c510cca564ef
+    maintainers:
+    - name: Dell EMC
+      url: https://dellemc.com
+    name: objectscale-portal
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/objectscale-portal-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.458530507Z"
     dependencies:
@@ -423,6 +775,22 @@ entries:
     version: 1.0.0
   objectscale-vsphere:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.695477819Z"
+    dependencies:
+    - name: objectscale-portal
+      repository: file://../objectscale-portal
+      version: 1.0.1
+    description: ObjectScale VMware vSphere Plugin
+    digest: 3fab6834e1f6a40d20b54b38b958abc79f15f4f6c8b2fe47c16b63fe73565915
+    maintainers:
+    - name: Dell EMC
+      url: https://dellemc.com
+    name: objectscale-vsphere
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/objectscale-vsphere-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.465258824Z"
     dependencies:
@@ -441,16 +809,16 @@ entries:
   pravega-operator:
   - apiVersion: v2
     appVersion: 0.5.2
-    created: "2022-05-12T14:43:35.468411858Z"
+    created: "2022-05-12T14:46:27.698227541Z"
     dependencies:
     - name: common-monitoring-lib
       repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
-      version: 3.7.0-1406.a091ec6d
+      version: 3.7.0-1407.d90de087
     - name: common-lib
       repository: file://../common-lib
-      version: 1.0.0
+      version: 1.0.1
     description: Pravega Operator Helm chart for Kubernetes
-    digest: 0e6649847e5f615b9b6986ee96243cd5fc80c03c004522fb1b7059d1682b690a
+    digest: 54fc9ad0577fe8e565ad0cf550f84cb73919f97c0823b4a4f8b2f5ac68b7e799
     home: https://github.com/pravega/pravega-operator
     icon: https://avatars3.githubusercontent.com/u/25698199
     keywords:
@@ -458,9 +826,26 @@ entries:
     - storage
     name: pravega-operator
     urls:
-    - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/pravega-operator-0.5.2.tgz
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/pravega-operator-0.5.2.tgz
     version: 0.5.2
   service-pod:
+  - apiVersion: v2
+    appVersion: 2.0.1
+    created: "2022-05-12T14:46:27.698958288Z"
+    dependencies:
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: A Helm chart for Dell EMC Service Pod
+    digest: 5e7ab874555063b148f8a10f26677df5652d28c8145bb4dde08d4d13f49ae955
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: service-pod
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/service-pod-2.0.1.tgz
+    version: 2.0.1
   - apiVersion: v2
     appVersion: 2.0.0
     created: "2022-05-12T14:43:35.469120047Z"
@@ -480,6 +865,23 @@ entries:
     version: 2.0.0
   snmp-notifier:
   - apiVersion: v2
+    appVersion: 2.0.1
+    created: "2022-05-12T14:46:27.699824543Z"
+    dependencies:
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: Helm chart for Dell Technologies KAHM SNMP Notifier
+    digest: 28c8f8a199e2be9521a553d965154a6491c4aa0e200844ed506632cd52b7905e
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: snmp-notifier
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/snmp-notifier-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
     appVersion: 2.0.0
     created: "2022-05-12T14:43:35.469907962Z"
     dependencies:
@@ -497,6 +899,25 @@ entries:
     - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/snmp-notifier-2.0.0.tgz
     version: 2.0.0
   statefuldaemonset-operator:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-05-12T14:46:27.703229375Z"
+    dependencies:
+    - name: common-monitoring-lib
+      repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
+      version: 3.7.0-1407.d90de087
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: 'StatefulDaemonSet operator deploys operator pod which is responsible for creation of statefulset pods on all k8s nodes '
+    digest: b47bd443db1bc00f0bbc557a53ff01e331fc97ab8ddf6864cd7a2f56978c76d4
+    maintainers:
+    - name: Dell EMC
+      url: https://dellemc.com
+    name: statefuldaemonset-operator
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/statefuldaemonset-operator-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-05-12T14:43:35.472920378Z"
@@ -518,6 +939,23 @@ entries:
     version: 1.0.0
   supportassist:
   - apiVersion: v2
+    appVersion: 2.0.1
+    created: "2022-05-12T14:46:27.704625143Z"
+    dependencies:
+    - name: common-lib
+      repository: file://../common-lib
+      version: 1.0.1
+    description: Helm chart for Dell SupportAssist ESE
+    digest: 5e3d771ef1c889963cb970ffd56eea29bfcb508f4b2c7d77170fdf123aa43590
+    icon: https://avatars0.githubusercontent.com/u/12926680
+    maintainers:
+    - name: Dell EMC
+      url: http://dellemc.com
+    name: supportassist
+    urls:
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/supportassist-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
     appVersion: 2.0.0
     created: "2022-05-12T14:43:35.474289587Z"
     dependencies:
@@ -537,16 +975,16 @@ entries:
   zookeeper-operator:
   - apiVersion: v2
     appVersion: 0.2.10
-    created: "2022-05-12T14:43:35.47801921Z"
+    created: "2022-05-12T14:46:27.708637378Z"
     dependencies:
     - name: common-monitoring-lib
       repository: https://asdrepo.isus.emc.com/artifactory/objectscale-helm-build/
-      version: 3.7.0-1406.a091ec6d
+      version: 3.7.0-1407.d90de087
     - name: common-lib
       repository: file://../common-lib
-      version: 1.0.0
+      version: 1.0.1
     description: 'Zookeeper operator deploys a custom resource for a zookeeper cluster, and a pod to provision and scale zookeeper clusters. '
-    digest: 1292c2b0e50fe53e7f6485ab24ccf79ea85faaeecb1db790e39aab91eba56c0d
+    digest: d53c3aabbf5d003e74f1f45c5a6f1d092cc256c0ab01acd881f6c9c7d090474a
     home: https://github.com/pravega/charts/blob/master/zookeeper-operator
     icon: https://zookeeper.apache.org/images/zookeeper_small.gif
     keywords:
@@ -558,6 +996,6 @@ entries:
     sources:
     - https://github.com/pravega/charts/blob/master/zookeeper-operator
     urls:
-    - https://github.com/dell/objectscale-charts/releases/download/v1.0.0/zookeeper-operator-0.2.10.tgz
+    - https://github.com/dell/objectscale-charts/releases/download/v1.0.1/zookeeper-operator-0.2.10.tgz
     version: 0.2.10
-generated: "2022-05-12T14:43:35.340769814Z"
+generated: "2022-05-12T14:46:27.563271378Z"
